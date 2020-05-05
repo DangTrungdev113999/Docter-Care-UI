@@ -1,11 +1,13 @@
+
 import React from 'react';
-import {View, Text} from 'react-native';
+import { Text, Block  } from './src/lib'
+import HomeScreen from './src/screens/Home';
 
 const App = () => {
   return (
-    <View>
-      <Text>sdf</Text>
-    </View>
+    <Block>
+      <HomeScreen />
+    </Block>
   );
 };
 

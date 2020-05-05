@@ -1,5 +1,5 @@
 import Block from './Block';
-import Text from './TextView';
+import Text from './Text';
 import Input from './Input';
 import Button from './Button';
 import Body from './Body';
