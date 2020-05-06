@@ -1,13 +1,11 @@
 
 import React from 'react';
-import { Text, Block  } from './src/lib'
+import { Text, Block } from './src/lib'
 import HomeScreen from './src/screens/Home';
 
 const App = () => {
   return (
-    <Block>
-      <HomeScreen />
-    </Block>
+    <HomeScreen />
   );
 };
 
