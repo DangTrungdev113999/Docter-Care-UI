@@ -9,10 +9,7 @@ const Text = styled.Text`
   ${({medium}) => medium && 'font-weight: 500;'}
   ${({bold}) => bold && 'font-weight: 700;'}
   ${({extraBold}) => extraBold && 'font-weight: 900;'}
-  ${({weight}) => {
-    if (weight) return `font-weight: ${+weight};`;
-    return 'font-weight: 400';
-  }}
+  ${({weight}) => weight && `font-weight: ${+weight};`}
   ${({m}) => m && `margin: ${m}px;`}
   ${({mt}) => mt && `margin-top: ${mt}px;`}
   ${({mb}) => mb && `margin-bottom: ${mb}px;`}

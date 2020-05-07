@@ -36,6 +36,7 @@ const TouchableOpacity = styled.TouchableOpacity`
   ${({justifyContent}) =>
     justifyContent && `justify-content: ${justifyContent}`}
   ${({alignItems}) => alignItems && `align-items: ${alignItems};`}
+  ${({alignSelf}) => alignSelf && `align-self: ${alignSelf};`}
   ${({shadow}) =>
     shadow &&
     `
