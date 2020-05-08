@@ -4,7 +4,7 @@ import {Dimensions} from 'react-native';
 import {Block, Body, Text, Button} from '../../lib';
 import HeaderBackground from '../../components/HeaderBackground';
 import Icon from '../../components/Icon';
-import CardInfo from './component/CardInfo';
+import CardInfo from '../../components/CardInfo';
 import doctorImage from '../../assets/doctor.jpg';
 import doctorImage1 from '../../assets/doctor-2.jpeg';
 const W = Dimensions.get('window').width;

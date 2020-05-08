@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {Block, Text, Button} from '../../../lib/index';
-import Icon from '../../../components/Icon';
+import {Block, Text, Button} from '../lib';
+import Icon from './Icon';
 
 const Image = styled.Image`
   width: 50px;
@@ -63,7 +63,21 @@ const CardInfo = ({source, info = {}, book, noFooter}) => {
           <Text color="gray">{info.address}</Text>
           <Text color="gray">{info.detail}</Text>
           {info.rating && <Rating rating={rating} hanleRating={hanleRating} />}
-          {book && <Block></Block>}
+          {book && (
+            <Button
+              w={150}
+              mt={15}
+              ph={20}
+              pv={10}
+              gradient
+              borderRadius={999}
+              centered
+              middle>
+              <Text color="#fff" bold>
+                Book visit
+              </Text>
+            </Button>
+          )}
         </Block>
         {info.isLike && (
           <Button>

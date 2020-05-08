@@ -1,8 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
-import LinearGradientStyled from '../components/LiearGradient';
+import LinearGradient from 'react-native-linear-gradient';
 
-const TouchableOpacity = styled.TouchableOpacity`
+const LinearGradientStyled = styled(LinearGradient)`
   ${({block}) => block && 'flex: 1;'}
   ${({flex}) => flex && ` flex: ${flex}`}
   ${({w}) => w && `width: ${w}px;`}
@@ -49,26 +48,4 @@ const TouchableOpacity = styled.TouchableOpacity`
   ${({style}) => style && {...style}}
 `;
 
-const Button = ({children, onPress, gradient, ...rest}) => {
-  if (gradient) {
-    return (
-      <TouchableOpacity onPress={onPress}>
-        <LinearGradientStyled
-          start={{x: 0, y: 0}}
-          end={{x: 1, y: 0}}
-          colors={['#554383', '#943F86']}
-          {...rest}>
-          {children}
-        </LinearGradientStyled>
-      </TouchableOpacity>
-    );
-  }
-
-  return (
-    <TouchableOpacity onPress={onPress} {...rest}>
-      {children}
-    </TouchableOpacity>
-  );
-};
-
-export default Button;
+export default LinearGradientStyled;
