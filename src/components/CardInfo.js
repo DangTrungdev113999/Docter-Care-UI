@@ -40,7 +40,7 @@ const Rating = ({rating, hanleRating}) => {
 };
 
 const CardInfo = ({source, info = {}, book, noFooter}) => {
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(4);
   const hanleRating = (star) => {
     setRating(star + 1);
   };

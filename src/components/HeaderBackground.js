@@ -2,14 +2,13 @@ import React from 'react';
 import {Dimensions} from 'react-native';
 import styled from 'styled-components';
 import LinearGradient from 'react-native-linear-gradient';
-import {Text, Block} from '../lib';
 
 const W = Dimensions.get('window').width;
 
 const LinearGradientStyled = styled(LinearGradient)`
   height: ${(W * 3) / 5}px;
-  border-bottom-left-radius: 60px;
-  border-bottom-right-radius: 60px;
+  border-bottom-left-radius: ${({a}) => (a ? 0 : 60)}px;
+  border-bottom-right-radius: ${({a}) => (a ? 0 : 60)}px;
 `;
 
 const Line = styled.View`
@@ -23,9 +22,10 @@ const Line = styled.View`
   transform: rotate(-35deg);
 `;
 
-const HeaderBackground = () => {
+const HeaderBackground = ({a}) => {
   return (
     <LinearGradientStyled
+      a
       start={{x: 0, y: 0}}
       end={{x: 1, y: 0}}
       colors={['#5D0E7F', '#7A007E', '#9C007F']}>

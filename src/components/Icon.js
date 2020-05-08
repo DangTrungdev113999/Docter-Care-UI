@@ -3,6 +3,9 @@ import Iconicons from 'react-native-vector-icons/Fontisto';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Entypo from 'react-native-vector-icons/Entypo';
+import Octicons from 'react-native-vector-icons/Octicons';
+import Feather from 'react-native-vector-icons/Feather';
 
 import {Block, Text} from '../lib';
 
@@ -33,6 +36,11 @@ const Icon = ({
       {type === 'fontAwesome' && (
         <FontAwesome name={name} size={size} color={color} />
       )}
+      {type === 'entypo' && <Entypo name={name} size={size} color={color} />}
+      {type === 'octicons' && (
+        <Octicons name={name} size={size} color={color} />
+      )}
+      {type === 'feather' && <Feather name={name} size={size} color={color} />}
     </Block>
   );
 };
