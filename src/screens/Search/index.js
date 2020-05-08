@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
 import {Dimensions} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
@@ -68,15 +69,24 @@ const SearchScreen = () => {
           </Block>
         </Block>
 
-        <Block>
+        <Block mt={20}>
           <MapView
+            style={{width: W, height: 300}}
             initialRegion={{
-              latitude: 37.78825,
-              longitude: -122.4324,
+              latitude: 10.762622,
+              longitude: 106.660172,
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421,
-            }}
-          />
+            }}>
+            <Marker
+              coordinate={{
+                latitude: 10.762622,
+                longitude: 106.660172,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+              }}
+            />
+          </MapView>
         </Block>
 
         <Block mt={20}>

@@ -20,6 +20,7 @@ const Block = styled.View`
   ${({pv}) => pv && `padding-vertical: ${pv}px;`}
   ${({ph}) => ph && `padding-horizontal: ${ph}px;`}
   ${({absolute}) => absolute && 'position: absolute;'}
+  ${({relative}) => relative && 'position: relative;'}
   ${({top}) => top && `top: ${top}px;`}
   ${({bottom}) => bottom && `bottom: ${bottom}px;`}
   ${({right}) => right && `right: ${right}px;`}
