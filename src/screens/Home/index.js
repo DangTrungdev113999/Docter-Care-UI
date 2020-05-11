@@ -129,6 +129,7 @@ const HomeScreen = () => {
             tag: 'Wellness',
           }}
         />
+        <Block mt={20} />
       </Block>
     </Body>
   );

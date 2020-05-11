@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import {ScrollView} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
-const SafeAreaView = styled.SafeAreaView`
+const SafeAreaViewStyled = styled(SafeAreaView)`
   flex: 1;
   ${({m}) => m && `margin: ${m}px;`}
   ${({mt}) => mt && `margin-top: ${mt}px;`}
@@ -24,13 +25,13 @@ const SafeAreaView = styled.SafeAreaView`
 
 const Body = ({children, scrollView, ...rest}) => {
   return (
-    <SafeAreaView {...rest}>
+    <SafeAreaViewStyled {...rest}>
       {scrollView ? (
         <ScrollView showsVerticalScrollIndicator={false}>{children}</ScrollView>
       ) : (
         children
       )}
-    </SafeAreaView>
+    </SafeAreaViewStyled>
   );
 };
 

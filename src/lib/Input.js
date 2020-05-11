@@ -34,14 +34,26 @@ const TextInput = styled.TextInput`
   `}
   ${({borderRadius}) => borderRadius && 'border-radius: 8px;'}
   ${({size}) => size && `font-size: ${size}px;`}
+  ${({color}) => color && `color: ${color};`}
   ${({style}) => style && {...style}}
 `;
 
-const Input = ({onTextChange, value, placeholder, style, ...rest}) => {
+const Input = ({
+  onTextChange,
+  value,
+  placeholder,
+  color,
+  editable = true,
+  keyboardType = 'phone-pad',
+  style,
+  ...rest
+}) => {
   return (
     <TextInput
       placeholder={placeholder}
-      onTextChange={onTextChange}
+      onChangeText={onTextChange}
+      editable={editable}
+      keyboardType={keyboardType}
       value={value}
       style={style}
       {...rest}

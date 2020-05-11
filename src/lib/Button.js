@@ -5,6 +5,7 @@ import LinearGradientStyled from '../components/LiearGradient';
 const TouchableOpacity = styled.TouchableOpacity`
   ${({block}) => block && 'flex: 1;'}
   ${({flex}) => flex && ` flex: ${flex}`}
+  ${({color}) => color && ` color: ${color}`}
   ${({w}) => w && `width: ${w}px;`}
   ${({h}) => h && `height: ${h}px;`}
   ${({m}) => m && `margin: ${m}px;`}
@@ -49,7 +50,7 @@ const TouchableOpacity = styled.TouchableOpacity`
   ${({style}) => style && {...style}}
 `;
 
-const Button = ({children, onPress, gradient, ...rest}) => {
+const Button = ({children, onPress, onLongPress, gradient, ...rest}) => {
   if (gradient) {
     return (
       <TouchableOpacity onPress={onPress}>

@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import {Dimensions} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
+import {useNavigation} from '@react-navigation/native';
 
 import {Block, Body, Text, Button, Input} from '../../lib';
 import HeaderBackground from '../../components/HeaderBackground';
@@ -12,13 +13,16 @@ import doctorImage1 from '../../assets/doctor-2.jpeg';
 const W = Dimensions.get('window').width;
 
 const SearchScreen = () => {
+  const navigation = useNavigation();
+  const [search, setSearch] = useState('');
+  const [location, setLocation] = useState('');
   return (
     <Body scrollView bgColor="#f3f3f3">
       <Block absolute h={250} w={W}>
         <HeaderBackground a />
       </Block>
       <Block block>
-        <Button ph={20} mt={30}>
+        <Button ph={20} mt={30} onPress={() => navigation.navigate('Home')}>
           <Icon type="fontAwesome" name="angle-left" color="#fff" size={30} />
         </Button>
 
@@ -46,7 +50,13 @@ const SearchScreen = () => {
             centered
             middle>
             <Icon type="feather" name="search" size={25} color="#222" mr={10} />
-            <Input block value="VietNam" size={16} />
+            <Input
+              block
+              value={search}
+              placeholder="search"
+              size={16}
+              onChangeText={(text) => setSearch(text)}
+            />
           </Block>
           <Block
             bgColor="#fff"
@@ -64,7 +74,15 @@ const SearchScreen = () => {
               color="#222"
               mr={10}
             />
-            <Input block value="Current location" size={16} />
+            <Input
+              block
+              value={location}
+              onChangeText={(text) => setLocation(text)}
+              size={16}
+              placeholder="current location"
+              placeholderTextColor="#9770A3"
+              style={{color: '#9770A3'}}
+            />
             <Text color="lightgray">12 mi</Text>
           </Block>
         </Block>
@@ -119,6 +137,7 @@ const SearchScreen = () => {
               tag: 'Wellness',
             }}
           />
+          <Block mt={20} />
         </Block>
       </Block>
     </Body>
