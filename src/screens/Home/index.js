@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Dimensions} from 'react-native';
+import {Dimensions, ScrollView} from 'react-native';
 
 import {Block, Body, Text, Button} from '../../lib';
 import HeaderBackground from '../../components/HeaderBackground';
@@ -45,9 +45,9 @@ const HomeScreen = () => {
     setFaceActive(index);
   };
   return (
-    <Body scrollView bgColor="#f3f3f3">
+    <Body bgColor="#f3f3f3">
       <Block absolute h={250} w={W}>
-        <HeaderBackground />
+        <HeaderBackground a />
       </Block>
       <Block block>
         <Block mt={52} ph={30} pv={20}>
@@ -90,46 +90,48 @@ const HomeScreen = () => {
             </Button>
           ))}
         </Block>
-        <HeaderTop title="Your Next Appointment" moreText="See All" />
-        <CardInfo
-          source={doctorImage}
-          info={{
-            name: 'Dr T Pay Dhar',
-            time: 'Sunday, May 15th at 8:00 PM',
-            address: '570 Kemmer Shores',
-            detail: 'San Francisco, CA 90293',
-            more: true,
-          }}
-        />
-        <HeaderTop title="Specialist in your area" moreText="See All" />
-        <CardInfo
-          source={doctorImage1}
-          noFooter
-          info={{
-            name: 'Dr Ayon Das',
-            time: 'Popular Pharma Limited',
-            address: 'Dermatologists',
-            detail: 'San Francisco, CA | 5 min',
-            isLike: true,
-            rating: true,
-            tag: 'Wellness',
-          }}
-        />
-        <Block mt={20} />
-        <CardInfo
-          source={doctorImage1}
-          noFooter
-          info={{
-            name: 'Dr Ayon Das',
-            time: 'Popular Pharma Limited',
-            address: 'Dermatologists',
-            detail: 'San Francisco, CA | 5 min',
-            isLike: true,
-            rating: true,
-            tag: 'Wellness',
-          }}
-        />
-        <Block mt={20} />
+        <ScrollView>
+          <HeaderTop title="Your Next Appointment" moreText="See All" />
+          <CardInfo
+            source={doctorImage}
+            info={{
+              name: 'Dr T Pay Dhar',
+              time: 'Sunday, May 15th at 8:00 PM',
+              address: '570 Kemmer Shores',
+              detail: 'San Francisco, CA 90293',
+              more: true,
+            }}
+          />
+          <HeaderTop title="Specialist in your area" moreText="See All" />
+          <CardInfo
+            source={doctorImage1}
+            noFooter
+            info={{
+              name: 'Dr Ayon Das',
+              time: 'Popular Pharma Limited',
+              address: 'Dermatologists',
+              detail: 'San Francisco, CA | 5 min',
+              isLike: true,
+              rating: true,
+              tag: 'Wellness',
+            }}
+          />
+          <Block mt={20} />
+          <CardInfo
+            source={doctorImage1}
+            noFooter
+            info={{
+              name: 'Dr Ayon Das',
+              time: 'Popular Pharma Limited',
+              address: 'Dermatologists',
+              detail: 'San Francisco, CA | 5 min',
+              isLike: true,
+              rating: true,
+              tag: 'Wellness',
+            }}
+          />
+          <Block mt={20} />
+        </ScrollView>
       </Block>
     </Body>
   );

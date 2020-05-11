@@ -107,7 +107,9 @@ const CusomTabBottom = ({state, descriptors, navigation}) => {
 
 const MainTab = () => {
   return (
-    <Tab.Navigator tabBar={(props) => <CusomTabBottom {...props} />}>
+    <Tab.Navigator
+      initialRouteName="Heart"
+      tabBar={(props) => <CusomTabBottom {...props} />}>
       <Tab.Screen name="Home" component={HomeTab} />
       <Tab.Screen name="Search" component={SearchTab} />
       <Tab.Screen name="Heart" component={HeartTab} />
