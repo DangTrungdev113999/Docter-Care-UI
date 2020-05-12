@@ -6,7 +6,7 @@ import PracticeScreen from '../../screens/Practice';
 import CedentialsScreen from '../../screens/Cedentials';
 import ScheduleScreen from '../../screens/Schedule';
 
-import BackIcon from '../../components/header/BackIcon';
+import RightIcon from '../../components/header/RightIcon';
 
 import {Block} from '../../lib/';
 import {navigationOptionCommon, navigationTopBar} from '../navigationOption';
@@ -25,10 +25,10 @@ const HeartScreen = () => (
 const HeartTab = () => (
   <Stack.Navigator screenOptions={{...navigationOptionCommon}}>
     <Stack.Screen
-      name="Heart"
+      name="Specialist health"
       options={({route, navigation}) => ({
-        headerRight: () => <Block />,
-        headerLeft: () => <BackIcon navigation={navigation} />,
+        headerRight: () => <RightIcon navigation={navigation} />,
+        headerLeft: () => <Block />,
       })}
       component={HeartScreen}
     />

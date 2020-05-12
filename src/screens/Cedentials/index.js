@@ -1,11 +1,13 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Button, Block, Body, Text} from '../../lib/';
 
 const Cedentials = () => {
   return (
-    <View>
-      <Text>Cedentials</Text>
-    </View>
+    <Body>
+      <Block centered middle>
+        <Text h4>Chan ui</Text>
+      </Block>
+    </Body>
   );
 };
 

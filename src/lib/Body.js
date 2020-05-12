@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {ScrollView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-const SafeAreaViewStyled = styled(SafeAreaView)`
+const SafeAreaViewStyled = styled.View`
   flex: 1;
   ${({m}) => m && `margin: ${m}px;`}
   ${({mt}) => mt && `margin-top: ${mt}px;`}
