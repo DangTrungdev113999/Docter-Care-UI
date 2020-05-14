@@ -1,7 +1,30 @@
 import React from 'react';
 import {Block, Text, Body, Button} from '../../lib/index';
+import {connectActionSheet} from '@expo/react-native-action-sheet';
 
-const PacticeScreen = () => {
+const PacticeScreen = ({showActionSheetWithOptions}) => {
+  const onPress = () => {
+    showActionSheetWithOptions(
+      {
+        options: ['Generate number', 'Reset', 'Cancel'],
+        destructiveButtonIndex: 2,
+        cancelButtonIndex: 2,
+        useModal: true,
+        showSeparators: true,
+      },
+      (buttonIndex) => {
+        if (buttonIndex === 0) {
+          // cancel action
+          console.log('0 🔮');
+        } else if (buttonIndex === 1) {
+          console.log('1 🔮');
+          // setResult(Math.floor(Math.random() * 100) + 1);
+        } else if (buttonIndex === 2) {
+          console.log('2 🔮');
+        }
+      },
+    );
+  };
   return (
     <Body scrollView>
       <Block p={20}>
@@ -74,7 +97,14 @@ const PacticeScreen = () => {
           <Text>8 PM - 6PM</Text>
         </Block>
       </Block>
-      <Button gradient m={20} h={65} borderRadius={20} centered middle>
+      <Button
+        gradient
+        m={20}
+        h={65}
+        borderRadius={20}
+        centered
+        middle
+        onPress={onPress}>
         <Text bold color="#fff">
           BOOK APPOINTMENT
         </Text>
@@ -83,4 +113,4 @@ const PacticeScreen = () => {
   );
 };
 
-export default PacticeScreen;
+export default connectActionSheet(PacticeScreen);
