@@ -4,8 +4,10 @@ import {Button, Block, Body, Text} from '../../lib/';
 const Cedentials = () => {
   return (
     <Body>
-      <Block centered middle>
-        <Text h4>Chan ui</Text>
+      <Block block>
+        <Block bgColor="tomato" flex={1} />
+        <Block bgColor="lightblue" flex={2} />
+        <Block bgColor="lightgreen" flex={3} />
       </Block>
     </Body>
   );
